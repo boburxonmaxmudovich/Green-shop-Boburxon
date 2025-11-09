@@ -10,7 +10,7 @@ const Login = () => {
   const icon_style: string =
     "border h-[40px] border-[#EAEAEA] rounded-md flex items-center justify-center gap-3 mb-4 cursor-pointer";
 
-  const { mutate, isLoading } = useLoginMutate();
+  const { mutate, isPending } = useLoginMutate();
   const onAuth = (e: LoginType) => {
     mutate(e);
   };
@@ -52,7 +52,7 @@ const Login = () => {
             Forgot Password?
           </p>
           <button className="bg-[#46A358] w-full mt-4 text-white h-[40px] rounded-md">
-            {isLoading ? <LoadingOutlined /> : "Login"}
+            {isPending ? <LoadingOutlined /> : "Login"}
           </button>
         </Form>
         <div className="flex items-center justify-center mt-5 mb-5 gap-4">

@@ -1,4 +1,4 @@
-import { useMutation } from "react-query";
+import { useMutation } from "@tanstack/react-query";
 import { useAxios } from "../../useAxios";
 import Cookies from "js-cookie";
 import { useReduxDispatch } from "../../userRedux";
@@ -13,7 +13,7 @@ export const useLoginMutate = () => {
       axios({ url: "user/sign-in", body: data, method: "POST" }).then(
         (res) => res.data.data
       ),
-    onSuccess: (data) => {
+    onSuccess: (data: { token: string; user: object }) => {
       const { token, user } = data;
 
       Cookies.set("user", JSON.stringify(user), { expires: 0.0833 });
@@ -31,7 +31,7 @@ export const useRegisterMutate = () => {
       axios({ url: "user/sign-up", body: data, method: "POST" }).then(
         (res) => res.data.data
       ),
-    onSuccess: (data) => {
+    onSuccess: (data: { token: string; user: object }) => {
       const { token, user } = data;
 
       Cookies.set("user", JSON.stringify(user), { expires: 0.0833 });

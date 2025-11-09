@@ -1,5 +1,5 @@
-import { useQuery } from "react-query";
 import { useAxios } from "../useAxios";
+import { useQuery } from "@tanstack/react-query";
 
 interface QueryType {
   pathname: string;
@@ -9,12 +9,8 @@ interface QueryType {
 export const useQueryHendler = (props: QueryType) => {
   const axios = useAxios();
   const { pathname, url, params } = props;
-  return useQuery(
-    [pathname],
-    () => axios({ url, params }).then((res) => res.data.data),
-    {
-      refetchOnWindowFocus: false,
-      keepPreviousData: false,
-    }
-  );
+  return useQuery({
+    queryKey: [pathname],
+    queryFn: () => axios({ url, params }).then((res) => res.data.data),
+  });
 };
