@@ -10,7 +10,7 @@ export const useQueryHendler = (props: QueryType) => {
   const axios = useAxios();
   const { pathname, url, params } = props;
   return useQuery({
-    queryKey: [pathname],
+    queryKey: [pathname, url],
     queryFn: () => axios({ url, params }).then((res) => res.data.data),
   });
 };
