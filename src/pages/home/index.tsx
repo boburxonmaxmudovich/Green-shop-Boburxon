@@ -4,10 +4,12 @@ import Hero from "../../components/hero";
 
 const Home = () => {
   return (
-    <div className="w-[90%] m-auto">
+    <div className=" m-auto">
       <Header />
-      <Hero />
-      <Dashboard />
+      <div className="w-[90%] m-auto">
+        <Hero />
+        <Dashboard />
+      </div>
     </div>
   );
 };
