@@ -9,7 +9,7 @@ const Discount = () => {
   });
 
   return (
-    <div className="flex flex-col justify-between items-center gap-[10px] text-center mt-4">
+    <div className="flex flex-col justify-between items-center gap-3 text-center mt-4">
       <h3 className="text-[#46a358] text-[20px] font-normal leading-[120%]">
         {data?.title}
       </h3>

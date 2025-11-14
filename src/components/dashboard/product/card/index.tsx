@@ -14,7 +14,7 @@ const Card: FC<ProductType> = (props) => {
       <div className="relative">
         <div className="group h-[300px] bg-[#f5f5f5] flex justify-center items-center relative">
           <img src={props.main_image} alt="flower" className="w-3/5" />
-          <div className="hidden gap-3 justify-center inset-x-auto absolute bottom-[20px] items-center group-hover:flex max-md:flex">
+          <div className="hidden gap-3 justify-center inset-x-auto absolute bottom-5 items-center group-hover:flex max-md:flex">
             <div className={`${icon_style} `}>
               <ShoppingCartOutlined />
             </div>
@@ -27,7 +27,7 @@ const Card: FC<ProductType> = (props) => {
           </div>
         </div>
         <div>
-          <h3 className="text-[3D3D3D] text-[16px] font-[500] pt-[10px] pb-[2px]">
+          <h3 className="text-[3D3D3D] text-[16px] font-semibold pt-3 pb-2">
             {props.title}
           </h3>
           <div className="flex items-center gap-3">
@@ -35,7 +35,7 @@ const Card: FC<ProductType> = (props) => {
               {props.price}$
             </h1>
             {props.discount ? (
-              <h1 className="font-[300] text-[#A5A5A5] line-through">
+              <h1 className="font-light text-[#A5A5A5] line-through">
                 {props.discount_price}
               </h1>
             ) : (
