@@ -8,7 +8,7 @@ const Product = () => {
   const { paramValue } = useSearchParam();
   const category = paramValue("category") || "house-plants";
 
-  const { data, isLoading, isError }: DataType<ProductType[]> = useQueryHendler(
+  const { data, isLoading }: DataType<ProductType[]> = useQueryHendler(
     {
       url: `flower/category/${category}`,
       pathname: `flower-product-${category}`,
